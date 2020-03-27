@@ -15,6 +15,10 @@ ingredients: Ingredients[] ;
 
   ngOnInit() {
    this.ingredients= this.slservice.getIngresents();
+   this.slservice.Ingregentschanged.subscribe(
+
+    (ingredients: Ingredients[])=>this.ingredients=ingredients
+   )
 
   }
 

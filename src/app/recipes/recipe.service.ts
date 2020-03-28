@@ -1,16 +1,17 @@
 import { Recipe } from './recipes.model';
-import { EventEmitter, Injectable } from '@angular/core';
+import {  Injectable } from '@angular/core';
 import { Ingredients } from '../shared/ingredients.model';
 import { ShoppinglistService } from '../shopping-list/shopping-list.service';
+
 @Injectable()
 export class RecipeService{
 
 
-  public recipeselected= new EventEmitter<Recipe>();
+
   private  recipes: Recipe[] = [
         new Recipe('Pizza',
          'A teasty Pizza', 
-         'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+         'https://upload.wikimedia.org/wikipedia/commons/7/72/Schnitzel.JPG',
          [
            new Ingredients('Meat',1),
            new Ingredients('french fries',20)
@@ -18,7 +19,7 @@ export class RecipeService{
          ),
         new Recipe('Burger',
          'Big Bug Burgger', 
-         'https://upload.wikimedia.org/wikipedia/commons/1/15/Recipe_logo.jpeg',
+         'https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg',
          [
           new Ingredients('bread',1),
           new Ingredients('cheese',5)

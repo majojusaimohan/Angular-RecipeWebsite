@@ -38,5 +38,9 @@ id: number
   this.route.navigate(['edit'],{relativeTo: this.activatedroute })
    // this.route.navigate(['../',this.id,'edit'],{relativeTo: this.activatedroute })
   }
+  ondeleterecipe(){
+    this.recipeservive.deleterecipe(this.id);
+    this.route.navigate(['/recipes'])
+  }
 
 }

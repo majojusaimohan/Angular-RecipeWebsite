@@ -70,7 +70,7 @@ export class ShoppingEditComponent implements OnInit,OnDestroy {
 
 
   ondelete(){
-    
+     
       this.slservice.deleteingredent(this.edititemindex);
 
 

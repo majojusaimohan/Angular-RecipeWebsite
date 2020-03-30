@@ -18,6 +18,20 @@ export class RecpieListComponent implements OnInit {
 
  }
 
+ ngOnInit() {
+
+  this.recipeSevice.recipechanges.subscribe(
+(recipe:Recipe[])=>{
+
+  this.recipes=recipe;
+}
+
+  )
+    
+    this.recipes=this.recipeSevice.getRecipes();
+  }
+
+
  newrecipe(){
    this.route.navigate(['new'],{relativeTo: this.activateroute })
 
@@ -28,8 +42,6 @@ export class RecpieListComponent implements OnInit {
 
   
 
-  ngOnInit() {
-    this.recipes=this.recipeSevice.getRecipes();
-  }
+  
 
 }

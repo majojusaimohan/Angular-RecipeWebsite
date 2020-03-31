@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Stroagedataservice } from '../shared/data-stroage.service';
 
 
 @Component({
@@ -8,6 +9,13 @@ import { Component } from '@angular/core';
 })
 export class headerComponent {
  
-  
+  constructor(private datastorage: Stroagedataservice){}
+  onsavedata(){
 
+    this.datastorage.onstoredata();
+  }
+  onfetchdata(){
+
+    this.datastorage.fetchrecipes().subscribe();
+  }
 }

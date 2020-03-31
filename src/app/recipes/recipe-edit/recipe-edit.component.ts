@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { RecipeService } from '../recipe.service';
+import { Recipe } from '../recipes.model';
 
 
 @Component({
@@ -32,12 +33,18 @@ recipeform: FormGroup;
    
   }
   onSubmit(){
+      const newRecipe = new Recipe(
+      this.recipeform.value['name'],
+      this.recipeform.value['description'],
+     this.recipeform.value['Imagepath'],
+      this.recipeform.value['ingredents']);
   if(this.editMode){
-    this.recipeservice.updaterecipe(this.id,this.recipeform.value);
-    console.log(this.recipeform.value)
+    this.recipeservice.updaterecipe(this.id, newRecipe);
+    
   }else{
-    this.recipeservice.AddRecipe(this.recipeform.value);
+    this.recipeservice.AddRecipe(newRecipe);
   }
+  this.route.navigate(['/recipes'])
 }
 
 

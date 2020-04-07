@@ -7,6 +7,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
 import { RecpieDetailComponent } from './recipes/recpie-detail/recpie-detail.component';
 import { RecipeEditComponent } from './recipes/recipe-edit/recipe-edit.component';
 import { RecipeResolver } from './recipes/recipe-start/recipe-resolver.service';
+import { AuthComponent } from './auth/auth.component';
 
 
 const appRoutes: Routes=[
@@ -20,7 +21,10 @@ const appRoutes: Routes=[
      
       {path: ':id/edit', component: RecipeEditComponent, resolve: [RecipeResolver]}
     ]},
-    {path:'shopping-list',component: ShoppingListComponent}
+    {path:'shopping-list',component: ShoppingListComponent},
+    {path:'auth',component: AuthComponent}
+
+
 
 ];
 
